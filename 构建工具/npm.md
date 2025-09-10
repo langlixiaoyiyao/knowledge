@@ -38,9 +38,8 @@ node_modules
 ├── C
     └── node_modules
         └── B@v2
-└── D
-    └── node_modules
-        └── E@v1
+├── D
+└──E@v1
 ```
 这种嵌套方案可以避免同个包被安装多次，也可以避免嵌套层级太深
 
