@@ -29,8 +29,20 @@ node_modules
 ```
 这种嵌套方式虽然结构清晰明了，但是多个依赖如果都依赖同个包的话，这个包会被下载多次，会导致node_modules的体积过于庞大。
 ### npm3--扁平化嵌套、不确定性、幽灵依赖、依赖分身
-#### 扁平化嵌套
-
+针对npm2嵌套地狱的问题，npm3作出了解决方案，就是采用扁平化嵌套方式。   
+比如：项目依赖了A、C、D，A依赖B@v1，C依赖B@v2，D依赖E@v1。那么npm安装之后结构就是下面这种情况
+```
+node_modules
+├── A
+├── B@v1
+├── C
+    └── node_modules
+        └── B@v2
+└── D
+    └── node_modules
+        └── E@v1
+```
+这种嵌套方案可以避免同个包被安装多次，也可以避免嵌套层级太深
 
 参考文章：   
 [npm 模块安装机制简介](https://www.ruanyifeng.com/blog/2016/01/npm-install.html)。   
