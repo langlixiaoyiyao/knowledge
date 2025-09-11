@@ -37,7 +37,7 @@ node_modules
 ├── A
 ├── B@v1
 ├── C
-    └── node_modules
+   └── node_modules
         └── B@v2
 ├── D
 └──E@v1
