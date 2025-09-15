@@ -64,6 +64,31 @@ node_modules
 ├── D
 └──E@v1
 ```
+#### node_modules结构的不确定性
+因为存在依赖提升，所以node_modules的结构根据安装包的顺序不同，可能会发生变化，举例如下：   
+假如我目前在准备项目的一些前置依赖，然后我的安装顺序如下：   
+A -> C(依赖lodash@3) -> B(依赖lodash@2)，那么我的node_modules的结构如下
+```
+node_modules
+├── A
+├──lodash@3
+├── B
+   └── node_modules
+        └── lodash@2
+└── C
+
+```
+但是package.json是按照字典排序将这些包添加在依赖字段中的。下一个开发者如果按照pakcage.json去安装，那么他的安装顺序和node_modules结构如下：   
+A ->  B(依赖lodash@2) -> C(依赖lodash@3)
+```
+node_modules
+├── A
+├──lodash@2
+├── B
+├── C
+    └── node_modules
+        └── lodash@3
+```
 
 参考文章：   
 [npm 模块安装机制简介](https://www.ruanyifeng.com/blog/2016/01/npm-install.html)。   
