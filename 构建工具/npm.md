@@ -85,7 +85,7 @@ node_modules
 ├── A
 ├──lodash@2
 ├── B
-├── C
+└── C
     └── node_modules
         └── lodash@3
 ```
