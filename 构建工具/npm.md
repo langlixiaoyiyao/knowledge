@@ -12,6 +12,14 @@ npm install <package name> -f
 ```
 npm update <package name>
 ```
+## npm包的发布
+### npm包版本后缀
+```
+Alpha 代表内部测试版本
+Beta 代表公开的广泛测试版本
+RC 代表修复问题和缺陷的候选版本
+Release 代表最终的可靠版本
+```
 
 ## npm的发展过程
 ### npm2--嵌套地狱
