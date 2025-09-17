@@ -140,6 +140,7 @@ node_modules
   }
 }
 ```
+为了解决npm install的不确定性的问题，npm5引进了package-lock.json。只要项目中有package-lock.json，所有开发者都可以通过npm install按照package-lock.json的规则去安装包，而package-lock.json的dependencies可以解决这种不确定性。
 
 参考文章：   
 [npm 模块安装机制简介](https://www.ruanyifeng.com/blog/2016/01/npm-install.html)。   
