@@ -99,6 +99,48 @@ node_modules
 ```
 从上面就可以看出两者node_modules结构的不确定性
 
+## package-lock.json文件的解析
+假如有这么一个package.json，文件内容如下
+```
+{
+  "name": "my-app",   // 包的名字
+  "version": "1.0.0", // 包的版本
+  "dependencies": {   // 包的运行依赖
+    "base64-js": {    // 所依赖的包1
+      "version": "1.0.1", // 包的版本
+      "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-1.0.1.tgz", // 包的安装来源
+      "integrity": "sha1-aSbRsZT7xze47tUTdW3i/Np+pAg="
+    },
+    "buffer": {
+      "version": "5.4.3",
+      "resolved": "https://registry.npmjs.org/buffer/-/buffer-5.4.3.tgz",
+      "integrity": "sha512-zvj65TkFeIt3i6aj5bIvJDzjjQQGs4o/sNoezg1F1kYap9Nu2jcUdpwzRSJTHMMzG0H7bZkn4rNQpImhuxWX2A==",
+      "requires": { // buffer的依赖
+        "base64-js": "^1.0.2",
+        "ieee754": "^1.1.4"
+      },
+      "dependencies": { // buffer的依赖，真正安装在buffer的node_modules下面的依赖
+        "base64-js": {
+          "version": "1.3.1",
+          "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-1.3.1.tgz",
+          "integrity": "sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g=="
+        }
+      }
+    },
+    "ieee754": {
+      "version": "1.1.13",
+      "resolved": "https://registry.npmjs.org/ieee754/-/ieee754-1.1.13.tgz",
+      "integrity": "sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg=="
+    },
+    "ignore": {
+      "version": "5.1.4",
+      "resolved": "https://registry.npmjs.org/ignore/-/ignore-5.1.4.tgz",
+      "integrity": "sha512-MzbUSahkTW1u7JpKKjY7LCARd1fU5W2rLdxlM4kdkayuCwZImjkpluF9CM1aLewYJguPDqewLam18Y6AU69A8A=="
+    }
+  }
+}
+```
+
 参考文章：   
 [npm 模块安装机制简介](https://www.ruanyifeng.com/blog/2016/01/npm-install.html)。   
 [彻底了解npm——架构、进化史及原理解析](https://juejin.cn/post/7245201923506094140?searchId=20250909172905F773A6C04577F1DC38A5#heading-25)   
