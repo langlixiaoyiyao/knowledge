@@ -36,7 +36,7 @@ node_modules
         └── D@1.0.0
 ```
 这种嵌套方式虽然结构清晰明了，但是多个依赖如果都依赖同个包的话，这个包会被下载多次，会导致node_modules的体积过于庞大。
-### npm3--扁平化嵌套、不确定性、幽灵依赖、依赖分身
+### npm3--扁平化嵌套、不确定性、幽灵依赖
 #### 扁平化嵌套
 针对npm2嵌套地狱的问题，npm3作出了解决方案，就是采用扁平化嵌套方式。   
 无论是直接依赖还是子依赖的依赖，优先安装到node_modules的根目录下。当安装到相同模块的时候，会判断已安装模块是否符合新模块的版本范围，如何符合则跳过安装，不符合则安装在当前模块的node_modules下面。   
@@ -140,7 +140,7 @@ node_modules
   }
 }
 ```
-为了解决npm install的不确定性的问题，npm5引进了package-lock.json。只要项目中有package-lock.json，所有开发者都可以通过npm install按照package-lock.json的规则去安装包，而package-lock.json的dependencies可以解决这种不确定性。
+为了解决npm install的不确定性的问题，npm5引进了package-lock.json。只要项目中有package-lock.json，所有开发者都可以通过npm install按照package-lock.json的规则去安装包，而package-lock.json的dependencies可以解决这种不确定性。但是这依然无法解决幽灵依赖问题
 
 参考文章：   
 [npm 模块安装机制简介](https://www.ruanyifeng.com/blog/2016/01/npm-install.html)。   
