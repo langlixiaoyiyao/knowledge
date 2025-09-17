@@ -97,6 +97,7 @@ node_modules
     └── node_modules
         └── lodash@3
 ```
+从上面就可以看出两者node_modules结构的不确定性
 
 参考文章：   
 [npm 模块安装机制简介](https://www.ruanyifeng.com/blog/2016/01/npm-install.html)。   
