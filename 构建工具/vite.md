@@ -4,14 +4,25 @@
 npm i -D vite
 ```
 ## 基本的目录结构
-
-1、在根目录下面创建一个vite.config.js文件
 ```
+dist
+├── assets
+└── index.html
+public
+src
+└── index.ts
+index.html
+package-lock.json
+package.json
+vite.config.js
+```
+```
+// vite.config.js
 export default {
 }
 ```
-2、在根目录下面创建一个正常的html模版文件
 ```
+// index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
