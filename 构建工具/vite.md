@@ -62,3 +62,6 @@ export default {
   }
 }
 ```
+## vite的特性
+### treeshaking
+treeshaking也被称为摇树优化，简单来讲就是在保持代码运行不变的情况下，去除无用代码，只打包你所用到的api。要使用这个特性无需额外配置。
