@@ -41,4 +41,24 @@ export default {
 ## vite的基本命令
 dev构建命令：vite。   
 prod生产环境构建命令：vite build。   
-
+## vite.config.js
+```
+export default {
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: id => {
+          // id /Users/huangxiaohong/MyDir/demo/my-test/index.html
+          // id /Users/huangxiaohong/MyDir/demo/my-test/src/index.ts
+          // id /Users/huangxiaohong/MyDir/demo/my-test/node_modules/react/index.js
+          console.log("id", id);
+          // 将 node_modules 中的代码单独打包成一个 JS 文件,假如我的src/index.ts里面导入了react和lodash的包，并且都使用到了，那么这个配置就会把这两个node_modules里面的包集合打包成vendor-[hash].js
+          if(id.includes('node_modules')) {
+            return 'vendor'
+          }
+        }
+      }
+    }
+  }
+}
+```
