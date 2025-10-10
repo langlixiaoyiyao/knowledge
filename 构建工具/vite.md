@@ -23,3 +23,6 @@ export default {
 </body>
 </html>
 ```
+## vite的基本命令
+dev构建命令：vite
+prod生产环境构建命令：vite build
