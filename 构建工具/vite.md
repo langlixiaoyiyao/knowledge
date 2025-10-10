@@ -42,7 +42,7 @@ export default {
 dev构建命令：vite。   
 prod生产环境构建命令：vite build。   
 ## vite.config.js
-```
+```js
 export default {
   build: {
     rollupOptions: {
