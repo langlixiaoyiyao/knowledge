@@ -3,7 +3,8 @@
 ```
 npm i -D vite
 ```
-## 创建所需文件
+## 基本的目录结构
+
 1、在根目录下面创建一个vite.config.js文件
 ```
 export default {
