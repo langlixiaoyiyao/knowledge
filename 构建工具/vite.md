@@ -4,6 +4,9 @@
 npm i -D vite
 ```
 ## 基本的目录结构
+dist是执行了vite build之后生成的目录。   
+public下面的文件，当执行vite命令跑起来之后，该目录下面的文件均可直接访问。   
+index.html是模版文件。   
 ```
 dist
 ├── assets
