@@ -26,5 +26,8 @@ module.exports = {
   a: 1,
   b: 2,
 }
-
+// 错误写法如下
+exports = {
+  a: 1,
+}
 ```
