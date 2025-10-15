@@ -48,7 +48,11 @@ require(['axios', 'lodash'], function(axios, lodash) {
 
 ## CMD模块
 CMD规范推崇在代码中就近编写依赖，它通过参数注入的方式为开发者提供了一个加载方法require，开发者可以用它来去加载其依赖模块。所以被依赖的模块只有被需要的时候才会解析和执行。（这里需要注意的是：无论AMD或者CMD的模块在何时被执行，都是要提前下载到本地的，不同的只是执行时机）  
-
+```js
+define(function(require){
+  const axios = require('axios');
+})
+```
 
 ## 不同模块点的比较
 | 模块         | 执行时机 | 导出的值的类型 | 加载模块的方式 | 是否可以采用条件语句动态加载 |
