@@ -22,7 +22,7 @@ const { a, b } = require("a-b");
 const xixi = require("xixi");
 // 导出语法 exports = module.exports = {}
 exports.name = 'q';
-module.exports = {
+module.exports = { // 默认导出
   a: 1,
   b: 2,
 }
